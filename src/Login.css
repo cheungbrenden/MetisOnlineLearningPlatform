@@ -1,15 +1,10 @@
+/*body {*/
+/*  background-image: url("public/homeBackground.jpg");*/
+/*}*/
+
 .App {
   text-align: center;
 }
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-
 
 .App-header {
   background-color: #282c34;
@@ -26,22 +21,18 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 @media all and (min-width: 480px) {
   .Login {
     padding: 60px 0;
   }
 
-  .Login form {
+  .Login Form {
     margin: 0 auto;
     max-width: 320px;
+    padding: 30px;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: thin;
+
   }
 }

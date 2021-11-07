@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React, { useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
@@ -18,9 +17,12 @@ function Login() {
   }
 
   return (
+
       <div className="Login">
+
         <Form onSubmit={handleSubmit}>
-          <Form.Group size="lg" controlId="username">
+          <h3 className="mb-3">Log In</h3>
+          <Form.Group className="mb-3" size="lg" controlId="username">
             <Form.Label>Username</Form.Label>
             <Form.Control
                 autoFocus
@@ -29,7 +31,7 @@ function Login() {
                 onChange={(e) => setUsername(e.target.value)}
             />
           </Form.Group>
-          <Form.Group size="lg" controlId="password">
+          <Form.Group className="mb-3" size="lg" controlId="password">
             <Form.Label>Password</Form.Label>
             <Form.Control
                 type="password"
@@ -37,7 +39,7 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
             />
           </Form.Group>
-          <Button block size="lg" type="submit" disabled={!validateForm()}>
+            <Button className="btn btn-primary btn-lg btn-block" block size="lg" type="submit" disabled={!validateForm()}>
             Login
           </Button>
         </Form>
