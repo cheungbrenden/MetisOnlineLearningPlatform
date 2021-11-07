@@ -1,0 +1,35 @@
+h2 {
+    font-weight: 700;
+    font-size: 25px;
+    color: #3823a8;
+}
+
+.container {
+    box-sizing: border-box;
+    text-align: center;
+    display: inline;
+    border-radius: 28px;
+    background: #e4fafb;
+}
+
+#centerSpace {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+}
+
+#leftBox {
+    display: inline-grid;
+    width: 2fr;
+    height: 100%;
+    margin-inline: 15px;
+    margin-block: 30px;
+}
+
+#rightBox {
+    display: inline-grid;
+    width: 1fr;
+    height: 100%;
+    margin-inline: 15px;
+    margin-block: 30px;
+}
