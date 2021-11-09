@@ -14,8 +14,14 @@ async function login(username, password) {
             username: username,
             password: password
         })
-    }).then(response => response.json())
-    .then(response => response.uuid);
+    }).then(async (response) => { 
+        if (response.status !== 404) {
+            let result = await response.json();
+            return result.uuid;
+        }
+        else
+            return undefined;
+    });
 }
 
 export { login }

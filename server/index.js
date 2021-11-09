@@ -20,7 +20,10 @@ app.post('/login', async (req, res) => {
     let password = req.body.password;
     let { result } = await db.query('SELECT uuid FROM users WHERE username=? && password=? LIMIT 1;', [username, password]);
     console.log(result[0]);
-    res.status(200).json(result[0]).end();
+    if (result[0] !== undefined)
+        res.status(200).json(result[0]).end();
+    else
+        res.status(404).end();
 })
 
 app.listen(port);
