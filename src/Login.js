@@ -27,15 +27,16 @@ function Login() {
             gridTemplateRows: "1fr 1fr",
 
 
+
         }}>
             <div style={{
                 gridRow: 1,
                 gridColumn: 2
             }}>
                 <div id="info">
-                    <h2 className="font-darkBlue">WELCOME to METIS</h2>
+                    <h2 className="font-darkBlue;">WELCOME to METIS</h2>
 
-                    <h1 className="font-lightBlue">Personalized Education For Every Student</h1>
+                    <h1 className="font-lightBlue font-bold">Personalized Education For Every Student</h1>
 
                     <h3 className="font-darkBlue">Metis ensures every student has all of the resources required to
                         master their learning goals.</h3>

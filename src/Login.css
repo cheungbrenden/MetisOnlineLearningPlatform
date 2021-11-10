@@ -21,13 +21,23 @@
     /* Center and scale the image nicely */
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: auto;
 }
 
 #centerSpace {
     display: grid;
     width: 100vw;
     height: 100vh;
+
+    background-image: url(./images/loginBackground.jpg);
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+
 }
 
 #info {
@@ -37,4 +47,20 @@
     border-style: solid;
     border-radius: 15px;
     border-width: thin;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+.roboto {
+    font-family: Roboto;
+}
+
+.roboto-light {
+    font-family: "Roboto Light";
+}
+
+.roboto-thin {
+    font-family: "Roboto Thin";
 }
