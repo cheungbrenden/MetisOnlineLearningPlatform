@@ -69,3 +69,7 @@
 .background-white {
     background: white
 }
+
+.font-smallCaps {
+    font-variant-caps: small-caps;
+}
