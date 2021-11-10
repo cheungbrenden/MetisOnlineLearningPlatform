@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import './FontsAndColors.css'
+import React, {useState} from "react";
+import {useNavigate} from "react-router-dom";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import './Login.css';
+import './FontsAndColors.css'
 
 import {login} from "./Database"
 
@@ -35,7 +35,6 @@ function Login() {
             gridTemplateRows: "1fr 1fr",
 
 
-
         }}>
             <div style={{
                 gridRow: 1,
@@ -52,8 +51,8 @@ function Login() {
                 </div>
             </div>
             <div className="Login" style={{
-              gridRow: 2,
-              gridColumn: 2
+                gridRow: 2,
+                gridColumn: 2
             }}>
                 <h1> {test} </h1>
 
@@ -76,10 +75,22 @@ function Login() {
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </Form.Group>
-                    <Button className="btn btn-primary btn-lg btn-block" block size="lg" type="submit"
+                    <Button id="SignIn" className="btn btn-lg btn-block" block size="lg" type="submit"
                             disabled={!validateForm()}>
                         Login
                     </Button>
+                    <div>
+                        <Button id="CreateAccount" className="btn btn-primary btn-lg mt-3" block size="lg"
+                                type="submit"
+                                disabled={!validateForm()}>
+                            Create Account
+                        </Button>
+                        <Button id="ForgotCredentials" className="roboto btn btn-primary btn-lg mt-3" block size="lg"
+                                type="submit"
+                                disabled={!validateForm()}>
+                            Forgot Password or Username
+                        </Button>
+                    </div>
                 </Form>
             </div>
         </div>

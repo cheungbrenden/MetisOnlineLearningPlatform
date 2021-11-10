@@ -1,5 +1,6 @@
 .Login {
     padding: 60px 0;
+
 }
 
 .Login Form {
@@ -9,6 +10,7 @@
     border-style: solid;
     border-radius: 15px;
     border-width: thin;
+    background-color: #c4c4bc;
 
 }
 
@@ -47,6 +49,7 @@
     border-style: solid;
     border-radius: 15px;
     border-width: thin;
+    background-color: #c4c4bc;
 }
 
 h2 {
@@ -63,4 +66,17 @@ h2 {
 
 .roboto-thin {
     font-family: "Roboto Thin";
+}
+
+#SignIn {
+    width: 100%;
+    background-color: #f5c24c;
+}
+
+#CreateAccount {
+    width: 40%;
+}
+
+#ForgotCredentials {
+    width: 40%;
 }
