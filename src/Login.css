@@ -1,12 +1,12 @@
 .Login {
-    padding: 60px 0;
+    padding: 30px 0;
 
 }
 
 .Login Form {
     margin: 0 auto;
     max-width: 450px;
-    padding: 30px 60px;
+    padding: 30px 30px;
     border-style: solid;
     border-radius: 15px;
     border-width: thin;
@@ -43,9 +43,9 @@
 }
 
 #info {
-    margin: 30px auto;
+    margin: 15px auto;
     max-width: 450px;
-    padding: 30px 60px;
+    padding: 30px 30px;
     border-style: solid;
     border-radius: 15px;
     border-width: thin;
@@ -74,9 +74,11 @@ h2 {
 }
 
 #CreateAccount {
-    width: 40%;
+    left: 0;
+    background-color: #6ac9e6;
 }
 
 #ForgotCredentials {
-    width: 40%;
+    right: 0;
+    background-color: #6ac9e6;
 }

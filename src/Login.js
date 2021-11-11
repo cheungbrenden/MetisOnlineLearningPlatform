@@ -9,17 +9,17 @@ import './FontsAndColors.css'
 import {login} from "./Database"
 
 function Login() {
-    const [username, setUsername] = useState("");
+    const [email, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [test, setTest] = useState(undefined);
     const navigate = useNavigate();
 
     function validateForm() {
-        return username.length > 0 && password.length > 0;
+        return email.length > 0 && password.length > 0;
     }
 
     function handleSubmit(event) {
-        login(username, password).then(uuid => {
+        login(email, password).then(uuid => {
             console.log(uuid);
             if (uuid)
                 navigate('/home');
@@ -41,7 +41,7 @@ function Login() {
                 gridColumn: 2
             }}>
                 <div id="info">
-                    <h2 className="font-darkBlue;">WELCOME to METIS</h2>
+                    <h2 className="font-darkBlue">WELCOME to METIS</h2>
 
                     <h1 className="font-lightBlue font-bold">Personalized Education For Every Student</h1>
 
@@ -57,37 +57,37 @@ function Login() {
                 <h1> {test} </h1>
 
                 <Form onSubmit={handleSubmit}>
-                    <h3 className="mb-3">Log In</h3>
-                    <Form.Group className="mb-3" size="lg" controlId="username">
-                        <Form.Label>Username</Form.Label>
+                    <h3 className="mb-3 font-darkBlue">Log In</h3>
+                    <Form.Group className="mb-3" size="lg" controlId="email">
+                        <Form.Label className="font-darkBlue">Email</Form.Label>
                         <Form.Control
                             autoFocus
-                            type="text"
-                            value={username}
+                            type="email"
+                            value={email}
                             onChange={(e) => setUsername(e.target.value)}
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" size="lg" controlId="password">
-                        <Form.Label>Password</Form.Label>
+                        <Form.Label className="font-darkBlue">Password</Form.Label>
                         <Form.Control
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </Form.Group>
-                    <Button id="SignIn" className="btn btn-lg btn-block" block size="lg" type="submit"
+                    <Button id="SignIn" className="font-darkBlue btn btn-lg btn-block" block size="lg" type="submit"
                             disabled={!validateForm()}>
                         Login
                     </Button>
                     <div>
-                        <Button id="CreateAccount" className="btn btn-primary btn-lg mt-3" block size="lg"
+                        <Button id="CreateAccount" className="btn btn-lg mt-3" block size="lg"
                                 type="submit"
-                                disabled={!validateForm()}>
+                                >
                             Create Account
                         </Button>
-                        <Button id="ForgotCredentials" className="roboto btn btn-primary btn-lg mt-3" block size="lg"
+                        <Button id="ForgotCredentials" className="btn btn-lg mt-3" block size="lg"
                                 type="submit"
-                                disabled={!validateForm()}>
+                                >
                             Forgot Password or Username
                         </Button>
                     </div>
