@@ -1,7 +1,9 @@
 const express = require('express');
 const cors = require('cors')
 const app = express();
-const port = 3001;
+const path = require('path');
+const port = process.env.PORT || 3001;
+
 
 const Database = require('./Database');
 
@@ -10,12 +12,17 @@ var db = new Database();
 app.use(cors())
 app.use(express.json());
 
-app.get('/', async (req, res) => {
+app.get('/test-database', async (req, res) => {
     let { result } = await db.query("SELECT 'Hello World!' AS message");
-    res.send(result.message);
+    console.log(result);
+    res.send(result[0].message);
 })
 
-app.post('/login', async (req, res) => {
+app.get('/express-backend', (req, res) => {
+    res.send("EXPRESS BACKEND");
+})
+
+app.post('/getLogin', async (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
     let { result } = await db.query('SELECT uuid FROM users WHERE username=? && password=? LIMIT 1;', [username, password]);
@@ -26,4 +33,14 @@ app.post('/login', async (req, res) => {
         res.status(404).end();
 })
 
-app.listen(port);
+if (process.env.NODE_ENV === 'production') { // For production build
+    console.log("Using production build")
+    app.use(express.static(path.join(__dirname, 'build')))
+    app.get('/*', (req, res) => {
+        res.sendFile(path.join(__dirname, 'build', 'index.html'))
+    })
+}
+
+app.listen(port, () => {
+    console.log("Express server started on %d", port);
+});

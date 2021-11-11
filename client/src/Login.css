@@ -1,0 +1,40 @@
+.Login {
+    padding: 60px 0;
+}
+
+.Login Form {
+    margin: 0 auto;
+    max-width: 450px;
+    padding: 30px 60px;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: thin;
+
+}
+
+
+.bg {
+    background-image: url(./images/loginBackground.jpg);
+    /* Full height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#centerSpace {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+}
+
+#info {
+    margin: 30px auto;
+    max-width: 450px;
+    padding: 30px 60px;
+    border-style: solid;
+    border-radius: 15px;
+    border-width: thin;
+}
