@@ -1,0 +1,71 @@
+.navWindow {
+    display: grid;
+    grid-template-rows: 100px;
+    grid-template-columns: 100px;
+    height: 100vh;
+}
+
+.sideNavBar {
+    grid-column: 1;
+    grid-row: 2;
+    display: inline-block;
+    height: 100%;
+}
+
+.topNavBar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    table-layout: 1 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row: 1;
+}
+
+.centerWindow {
+    position: relative;
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.icon-logo {
+    position: absolute;
+    left: 16px;
+    height: 65px;
+    width: 65px;
+}
+
+.icon-profile {
+    position: absolute;
+    align-self: center;
+    height: 50px;
+    width: 50px;
+    right: 0px;
+}
+
+.text-metis {
+    position: absolute;
+    font-size: 48px;
+    left: 105px;
+}
+
+.text-pageName {
+    position: absolute;
+    font-size: 50px;
+    left: 275px;
+}
+
+#profileIcons {
+    display: flex;
+    position: absolute;
+    height: 45px;
+    width: 200px;
+    right: 200px;
+}
+
+.text-profileName {
+    position: absolute;
+    right: 50px;
+    font-size: 18px;
+    bottom: 0;
+}
