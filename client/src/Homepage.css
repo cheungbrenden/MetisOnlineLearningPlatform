@@ -1,16 +1,16 @@
-h2 {
-    font-weight: 700;
-    font-size: 25px;
-    color: #3823a8;
-    margin-top: 15px;
-}
-
 .container {
     box-sizing: border-box;
     text-align: center;
     display: inline;
     border-radius: 28px;
     background: #e4fafb;
+}
+
+.container-title {
+    font-weight: 700;
+    font-size: 25px;
+    color: #3823a8;
+    margin-top: 15px;
 }
 
 #centerSpace {
@@ -42,4 +42,67 @@ h2 {
     margin-right: 30px;
     margin-top: 15px;
     margin-bottom: 30px;
+}
+
+.assignment {
+    display: block;
+    margin: 5px;
+    border-radius: 12px;
+    background-color: white;
+    height: 65px;
+    text-align: left;
+    border: 1px solid #3823A8;
+    position: relative;
+    overflow: visible;
+}
+
+.assignment-leftBox {
+    display: inline-flex;
+    border-radius: 12px;
+    height: 65px;
+    width: 65px;
+    justify-content: center;
+    align-items: center;
+}
+
+.assignment-centerBox {
+    display: inline-block;
+    vertical-align: top;
+    margin: 5px;
+    overflow: visible;
+}
+
+.assignment-class {
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.assignment-name {
+    font-size: 20px;
+}
+
+.assignment-rightBox {
+    display: inline-flex;
+    position: absolute;
+    right: 15px;
+    text-align: right;
+}
+
+.assignment-dueDate {
+    position: relative;
+    top: 20px;
+    font-size: 18px;
+}
+
+.assignment-grade {
+    position: relative;
+    font-size: 25px;
+    top: 12px;
+}
+
+#gradesBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 15px;
+    row-gap: 5px;
 }

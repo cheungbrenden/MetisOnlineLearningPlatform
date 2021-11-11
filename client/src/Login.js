@@ -30,7 +30,7 @@ function Login() {
     }
 
     return (
-        <div id="centerSpace" style={{
+        <div id="centerSpace" className="loginBackground" style={{
             gridTemplateColumns: "2fr 3fr",
             gridTemplateRows: "1fr 1fr",
 

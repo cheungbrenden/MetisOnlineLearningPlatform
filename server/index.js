@@ -25,7 +25,7 @@ app.get('/express-backend', (req, res) => {
 app.post('/getLogin', async (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
-    let { result } = await db.query('SELECT uuid FROM users WHERE username=? && password=? LIMIT 1;', [username, password]);
+    let { result } = await db.query('SELECT uuid FROM users WHERE email=? && password=? LIMIT 1;', [username, password]);
     console.log(result[0]);
     if (result[0] !== undefined)
         res.status(200).json(result[0]).end();
@@ -33,7 +33,7 @@ app.post('/getLogin', async (req, res) => {
         res.status(404).end();
 })
 
-if (process.env.NODE_ENV === 'production') { // For production build
+if (process.env.NODE_ENV === undefined || process.env.NODE_ENV.trimEnd() !== 'dev') { // For production build
     console.log("Using production build")
     app.use(express.static(path.join(__dirname, 'build')))
     app.get('/*', (req, res) => {
