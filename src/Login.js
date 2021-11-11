@@ -79,7 +79,7 @@ function Login() {
                             disabled={!validateForm()}>
                         Login
                     </Button>
-                    <div id="asdfchangeafter">
+                    <div id="SideButtons">
                         <Button id="CreateAccount" className="btn btn-lg mt-3" block size="lg"
                                 type="submit">
                             Create Account
