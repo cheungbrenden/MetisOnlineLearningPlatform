@@ -2,13 +2,19 @@
 import './Navbars.css';
 
 // Top Nav Bar icons
-import logo from './images/grad-cap.png';
+import logo_icon from './images/grad cap logo.svg';
 import profile_icon from './images/profile.svg';
+import search_icon from './images/search.svg';
+import settings_icon from './images/settings.svg';
 
 // Side Nav Bar icons
-import chat_icon from './images/chat.svg';
-import goals_icon from './images/goals.svg';
+import home_icon from './images/home.svg';
+import classes_icon from './images/classes.svg';
 import grades_icon from './images/grades.svg';
+import chat_icon from './images/chat.svg';
+import progress_icon from './images/progress.svg';
+import goals_icon from './images/goals.svg';
+
 
 function NavWindow(props) {
     return (
@@ -25,32 +31,37 @@ function NavWindow(props) {
 function TopNavBar(props) {
     return (
         <span id="topNavBar" className="background-blue">
-            <img id="icon-logo" src={logo} alt="Metis Logo" />
+            <img id="icon-logo" src={logo_icon} alt="Metis Logo" />
             <span id="text-metis" className="font-white font-bold">METIS</span>
             <span id="text-pageName" className="font-oblique font-condensed font-light font-white">{props.pageName}</span>
-            <div id="profileIcons">
+            <div id="profileInfo">
                 <div className="text-profileName font-darkBlue font-regular font-smallCaps">Panda Bear</div>
-                <img className="icon-profile" src={profile_icon} alt="Profile icon" />
+                <img id="icon-profile" src={profile_icon} alt="Profile icon" />
             </div>
+            <img id="icon-search" src={search_icon} />
+            <img id="icon-settings" src={settings_icon} />
         </span>
     )
+}
+
+function SideBarButton(props) {
+    return (
+    <div className="sideBarButton">
+        <img src={props.icon} className="sideBarButton-icon"/>
+        <div className="sideBarButton-text">{props.name}</div>
+    </div>
+    );
 }
 
 function SideNavBar() {
     return (
         <div id="sideNavBar" className="background-darkBlue font-smallCaps font-white font-regular">
-            <div className="sideBarButton">
-                <img src={grades_icon} className="sideBarButton-icon"/>
-                <div className="sideBarButton-text">Grades</div>
-            </div>
-            <div className="sideBarButton">
-                <img src={chat_icon} className="sideBarButton-icon"/>
-                <div className="sideBarButton-text">Chat</div>
-            </div>
-            <div className="sideBarButton">
-                <img src={goals_icon} className="sideBarButton-icon"/>
-                <div className="sideBarButton-text">Goals</div>
-            </div>
+            <SideBarButton icon={home_icon} name="Home" />
+            <SideBarButton icon={classes_icon} name="Classes" />
+            <SideBarButton icon={grades_icon} name="Grades" />
+            <SideBarButton icon={chat_icon} name="Chat" />
+            <SideBarButton icon={progress_icon} name="Progress" />
+            <SideBarButton icon={goals_icon} name="Goals" />
         </div>
     )
 }

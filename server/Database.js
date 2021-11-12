@@ -9,7 +9,7 @@ class Database {
     // TODO: error handling
     async query(sql_string, args=[]) {
         let connection = this.connection;
-        return await new Promise (function(resolve, reject) {
+        return new Promise (function(resolve, reject) {
             connection.query(sql_string, args, function(err, result, fields) {
                 // if (err) throw err;
                 resolve({ result, fields });
