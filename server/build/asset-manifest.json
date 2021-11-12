@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5bf23edf.chunk.css",
+    "main.js": "/static/js/main.1257f803.chunk.js",
+    "main.js.map": "/static/js/main.1257f803.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c24dc3f8.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c24dc3f8.js.map",
+    "static/css/2.383c0125.chunk.css": "/static/css/2.383c0125.chunk.css",
+    "static/js/2.e03593aa.chunk.js": "/static/js/2.e03593aa.chunk.js",
+    "static/js/2.e03593aa.chunk.js.map": "/static/js/2.e03593aa.chunk.js.map",
+    "static/js/3.b708f0f4.chunk.js": "/static/js/3.b708f0f4.chunk.js",
+    "static/js/3.b708f0f4.chunk.js.map": "/static/js/3.b708f0f4.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.383c0125.chunk.css.map": "/static/css/2.383c0125.chunk.css.map",
+    "static/css/main.5bf23edf.chunk.css.map": "/static/css/main.5bf23edf.chunk.css.map",
+    "static/js/2.e03593aa.chunk.js.LICENSE.txt": "/static/js/2.e03593aa.chunk.js.LICENSE.txt",
+    "static/media/grad-cap.3eda9fe3.png": "/static/media/grad-cap.3eda9fe3.png",
+    "static/media/Login.css": "/static/media/loginBackground.be352431.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c24dc3f8.js",
+    "static/css/2.383c0125.chunk.css",
+    "static/js/2.e03593aa.chunk.js",
+    "static/css/main.5bf23edf.chunk.css",
+    "static/js/main.1257f803.chunk.js"
+  ]
+}

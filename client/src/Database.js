@@ -4,9 +4,9 @@ const DATABASE_API = "http://localhost:3001";
 // Promise that sends username and password to database and 
 // returns UUID if found (returns undefined otherwise)
 async function login(username, password) {
-    return await fetch(DATABASE_API + "/login", {
+    return await fetch("/getLogin", {
         method: 'POST',
-        mode: 'cors',
+        //mode: 'cors',
         headers: {
             "Content-Type": "application/json"
         },
@@ -15,7 +15,8 @@ async function login(username, password) {
             password: password
         })
     }).then(async (response) => { 
-        if (response.status !== 404) {
+        if (response.status === 200) {
+            console.log(response)
             let result = await response.json();
             return result.uuid;
         }
