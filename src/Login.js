@@ -80,11 +80,11 @@ function Login() {
                         Login
                     </Button>
                     <div id="SideButtons">
-                        <Button id="CreateAccount" className="btn btn-lg mt-3" block size="lg"
+                        <Button id="CreateAccount" className="mt-3" block size="lg"
                                 type="submit">
                             Create Account
                         </Button>
-                        <Button id="ForgotCredentials" className="btn btn-lg mt-3" block size="lg"
+                        <Button id="ForgotCredentials" className="mt-3" block size="lg"
                                 type="submit">
                             Forgot Password or Username
                         </Button>
