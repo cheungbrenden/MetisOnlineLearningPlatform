@@ -1,9 +1,9 @@
-
 import "./assignmentOverview.css";
+import NavWindow from "./Navbars";
 
 function assignmentOverview() {
   return (
-    <>
+    <NavWindow>
     <div id="wrapper">
       <div id="assignmentOverview" className="container">
         <h2>
@@ -53,7 +53,7 @@ function assignmentOverview() {
         </tr>
       </table>
     </div>
-  </>
+  </NavWindow>
   );
 }
 

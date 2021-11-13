@@ -4,7 +4,8 @@ import { Routes, Route, BrowserRouter} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
 
 import Login from './Login';
-import Homepage from './Homepage'
+import Homepage from './Homepage';
+import AssignmentOverview from './assignmentOverview';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,6 +13,7 @@ ReactDOM.render(
         <Routes>
             <Route path="" element={<Login />} />
             <Route path="home" element={<Homepage />} />
+            <Route path="assignment/overview" element={<AssignmentOverview />} />
         </Routes>
     </BrowserRouter>
   </React.StrictMode>,
