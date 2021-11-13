@@ -10,7 +10,8 @@
     font-weight: 700;
     font-size: 25px;
     color: #3823a8;
-    margin-top: 15px;
+    margin-top: 5px;
+    text-align: center;
 }
 
 #homepage-centerSpace {
@@ -23,14 +24,13 @@
 
 .assignment {
     display: block;
-    margin: 5px;
+    margin: 2px;
     border-radius: 12px;
     background-color: white;
-    height: 65px;
+    height: 67px;
     text-align: left;
     border: 1px solid #3823A8;
     position: relative;
-    overflow: visible;
 }
 
 .assignment-leftBox {
@@ -46,7 +46,6 @@
     display: inline-block;
     vertical-align: top;
     margin: 5px;
-    overflow: visible;
 }
 
 .assignment-class {
@@ -56,6 +55,7 @@
 
 .assignment-name {
     font-size: 20px;
+    color: black;
 }
 
 .assignment-rightBox {
@@ -69,12 +69,14 @@
     position: relative;
     top: 20px;
     font-size: 18px;
+    color: black;
 }
 
 .assignment-grade {
     position: relative;
     font-size: 25px;
     top: 12px;
+    color: black;
 }
 
 #gradesBox {
@@ -82,4 +84,89 @@
     grid-template-columns: 1fr 1fr;
     column-gap: 15px;
     row-gap: 5px;
+}
+
+#goalsBox {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 5px;
+    grid-auto-flow: column;
+}
+
+.goal {
+    display: block;
+    border-radius: 12px;
+    background-color: #6AC9E6CC;
+    height: 67px;
+    text-align: left;
+    border: 1px solid #E4FAFB;
+    position: relative;
+}
+
+.goal-leftBox {
+    display: inline-flex;
+    border-radius: 12px;
+    height: 65px;
+    width: 65px;
+    justify-content: center;
+    align-items: center;
+}
+
+.goal-centerBox {
+    display: inline-block;
+    vertical-align: top;
+    margin-left: 10px;
+    color: black;
+}
+
+.goal-name {
+    font-size: 28px;
+}
+
+.goal-type {
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    opacity: 0.5;
+}
+
+#calendar {
+    display: table;
+    border: 1px solid #3823A8;
+    border-radius: 28px;
+    background-color: #E4FAFB;
+    text-align: center;
+    border-collapse: separate;
+    table-layout: fixed;
+}
+
+#calendar-row {
+    display: table-row;
+    border: 1px solid #3823A8;
+}
+
+.calendar-cell {
+    width: 14%;
+    display: table-cell;
+    border-left: 1px solid #3823A8;
+}
+
+.calendar-cell:first-child {
+    border-left: none;
+}
+
+.calendar-date {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.calendar-day {
+    font-weight: 500;
+    font-size: 36px;
+}
+
+.calendar-current {
+    background-color: #6AC9E6;
+    color: white;
 }

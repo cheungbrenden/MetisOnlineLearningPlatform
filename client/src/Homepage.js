@@ -21,6 +21,21 @@ function AssignmentBox(props) {
     );
 }
 
+function GoalBox(props) {
+    return (
+        <div className="goal">
+            { !props.excludeIcon &&
+            <div className="goal-leftBox" style={{backgroundColor: props.color + "88"}}>
+                <img className="goal-icon" src={props.icon}/>
+            </div> }
+            <div className="goal-centerBox">
+                <div className="goal-name">{props.goalName}</div>
+                <div className="goal-type">{props.goalType}</div>
+            </div>
+        </div>
+    );
+}
+
 function Homepage() {
     return (
         <NavWindow pageName="Home">
@@ -81,6 +96,12 @@ function Homepage() {
                     <h2 className="container-title">
                         GOALS FOR THE WEEK
                     </h2>
+                    <div id="goalsBox">
+                        <GoalBox color="#F10909" goalName="SLO 3 - Fractions" goalType="Class Goal"/>
+                        <GoalBox color="#F10909" goalName="Review SLO 2 Questions" goalType="Teacher Set Goal"/>
+                        <GoalBox color="#F18609" goalName="Find Group for Final Project" goalType="Personal Goal"/>
+                        <GoalBox excludeIcon={true} goalName="Contribute to 3 Chat Posts" goalType="Personal Goal"/>
+                    </div>
                 </div>
                 <div id="grades" className="container" style={{
                     gridRow: 2,
@@ -100,9 +121,36 @@ function Homepage() {
                     gridRow: 3,
                     gridColumn: 3
                 }}>
-                    <h2 className="container-title">
-                        Calendar
-                    </h2>
+                    <div id="calendar-row">
+                        <div className="calendar-cell">
+                            <div className="calendar-date">11/28</div>
+                            <div className="calendar-day">Su</div>
+                        </div>
+                        <div className="calendar-cell">
+                            <div className="calendar-date">11/29</div>
+                            <div className="calendar-day">M</div>
+                        </div>
+                        <div className="calendar-cell">
+                            <div className="calendar-date">11/30</div>
+                            <div className="calendar-day">T</div>
+                        </div>
+                        <div className="calendar-cell calendar-current">
+                            <div className="calendar-date">12/01</div>
+                            <div className="calendar-day">W</div>
+                        </div>
+                        <div className="calendar-cell">
+                            <div className="calendar-date">12/02</div>
+                            <div className="calendar-day">Th</div>
+                        </div>
+                        <div className="calendar-cell">
+                            <div className="calendar-date">12/03</div>
+                            <div className="calendar-day">F</div>
+                        </div>
+                        <div className="calendar-cell">
+                            <div className="calendar-date">12/04</div>
+                            <div className="calendar-day">S</div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </NavWindow>
