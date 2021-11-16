@@ -13,27 +13,32 @@ function assignmentOverview() {
           <b> Class </b> : Algebra 1
         </p>
         <p>
-          <b> Status </b> : Incomplete
+          <b> Status </b> : In Progress
+        </p>
+        <p>
+          <b> Due </b> : December 2 @ 11pm
         </p>
       </div>
 
-      <div id="noOfProblems" className="container">
-        <h2>12 Problems Left</h2>
+      <div id="Comprehension" className="container">
+        <h2>Comprehension:</h2>
 
-        <p>20 Problems Total</p>
-        <p>40 Points Total</p>
+        <p id="large">5.7/10</p>
+        <p>Self Evaluation</p>
       </div>
 
-      <div id="due" className="container">
-        <h2>Due Date:</h2>
+      <div id="Completion" className="container">
+        <h2>Completion:</h2>
+        <p>0/20 Problems</p>
+        <p>0/40 Points</p>
       </div>
 
       
     </div>
     
-    <div className="tableWrap">
+    <div id="tableWrap">
       <table>
-        <thead className="tableHead" >
+        <thead>
           <th>#</th>
           <th>Title</th>
           <th>Points</th>
