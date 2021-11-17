@@ -15,5 +15,5 @@
     "client": "cd client && npm start",
     "server": "node server/index.js"
   },
-  "proxy": "http://localhost:3001"
+  "proxy": "http://localhost:3001/"
 }

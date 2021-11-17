@@ -28,14 +28,16 @@
     border-radius: 12px;
     background-color: white;
     height: 67px;
+    width: 100%;
     text-align: left;
     border: 1px solid #3823A8;
     position: relative;
+    padding: 0;
 }
 
 .assignment-leftBox {
     display: inline-flex;
-    border-radius: 12px;
+    border-radius: 10px;
     height: 65px;
     width: 65px;
     justify-content: center;

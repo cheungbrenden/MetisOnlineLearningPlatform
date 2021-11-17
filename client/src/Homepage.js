@@ -1,11 +1,11 @@
 import './Homepage.css'
 import NavWindow from './Navbars'; 
 import globe_icon from './images/globe.png';
-
+import {useNavigate} from "react-router-dom";
 
 function AssignmentBox(props) {
     return (
-        <div className="assignment">
+        <button className="assignment" onClick={() => {if (props.navigate) props.navigate("/assignment/overview")}} disabled={props.navigate === undefined}>
             <div className="assignment-leftBox" style={{backgroundColor: props.color + "55"}}>
                 <img className="assignment-icon" src={props.icon}/>
             </div>
@@ -17,7 +17,7 @@ function AssignmentBox(props) {
                 <div className="assignment-dueDate font-medium font-smallCaps">{props.dueDate}</div>
                 <div className="assignment-grade font-regular">{props.grade}</div>
             </div>
-        </div>
+        </button>
     );
 }
 
@@ -37,6 +37,7 @@ function GoalBox(props) {
 }
 
 function Homepage() {
+    const navigate = useNavigate();
     return (
         <NavWindow pageName="Home">
             <div id="homepage-centerSpace" style={{
@@ -68,8 +69,8 @@ function Homepage() {
                     <h2 className="container-title">
                         IN-PROGRESS ASSIGNMENTS
                     </h2>
+                    <AssignmentBox color="#F10909" subject="ALGEBRA 1" assignmentName="Section 3.1" dueDate="12/02 11pm" navigate={navigate}/>
                     <AssignmentBox color="#0912F1" icon={globe_icon} subject="WORLD HISTORY" assignmentName="Homework 4" dueDate="12/01 11pm"/>
-                    <AssignmentBox color="#F10909" subject="ALGEBRA 1" assignmentName="Section 3.1" dueDate="12/02 11pm"/>
                     <AssignmentBox color="#0CA838" subject="CHEMISTRY 2" assignmentName="Lab 3" dueDate="12/03 11pm"/>
                 </div>
                 <div id="completedAssignments" className="container" style={{
