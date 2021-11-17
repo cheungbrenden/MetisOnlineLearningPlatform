@@ -44,6 +44,11 @@
     align-items: center;
 }
 
+.assignment-icon {
+    width: 50px;
+    height: 50px;
+}
+
 .assignment-centerBox {
     display: inline-block;
     vertical-align: top;
@@ -114,6 +119,11 @@
     width: 65px;
     justify-content: center;
     align-items: center;
+}
+
+.goal-icon {
+    width: 50px;
+    height: 50px;
 }
 
 .goal-centerBox {

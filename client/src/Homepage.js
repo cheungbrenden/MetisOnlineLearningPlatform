@@ -1,6 +1,9 @@
 import './Homepage.css'
 import NavWindow from './Navbars'; 
-import globe_icon from './images/globe.png';
+import hist_icon from './images/worldwide.png';
+import chem_icon from './images/test.png';
+import alg_icon from './images/maths.png';
+import eng_icon from './images/book.png'
 import {useNavigate} from "react-router-dom";
 
 function AssignmentBox(props) {
@@ -55,10 +58,10 @@ function Homepage() {
                     <h2 className="container-title">
                         UPCOMING ASSIGNMENTS
                     </h2>
-                    <AssignmentBox color="#0912F1" icon={globe_icon} subject="WORLD HISTORY" assignmentName="Homework 5" dueDate="12/03 11pm"/>
-                    <AssignmentBox color="#F10909" subject="ALGEBRA 1" assignmentName="Section 3.2" dueDate="12/03 11pm"/>
-                    <AssignmentBox color="#0CA838" subject="CHEMISTRY 2" assignmentName="Lab 3 Quiz" dueDate="12/04 11pm"/>
-                    <AssignmentBox color="#F18609" subject="ENGLISH 10" assignmentName="Essay 4" dueDate="12/05 11pm"/>
+                    <AssignmentBox color="#0912F1" icon={hist_icon} subject="WORLD HISTORY" assignmentName="Homework 5" dueDate="12/03 11pm"/>
+                    <AssignmentBox color="#F10909" icon={alg_icon} subject="ALGEBRA 1" assignmentName="Section 3.2" dueDate="12/03 11pm"/>
+                    <AssignmentBox color="#0CA838" icon={chem_icon} subject="CHEMISTRY 2" assignmentName="Lab 3 Quiz" dueDate="12/04 11pm"/>
+                    <AssignmentBox color="#F18609" icon={eng_icon} subject="ENGLISH 10" assignmentName="Essay 4" dueDate="12/05 11pm"/>
                 </div>
                 <div id="inProgressAssignments" className="container" style={{
                     gridColumnStart: 2,
@@ -69,9 +72,9 @@ function Homepage() {
                     <h2 className="container-title">
                         IN-PROGRESS ASSIGNMENTS
                     </h2>
-                    <AssignmentBox color="#F10909" subject="ALGEBRA 1" assignmentName="Section 3.1" dueDate="12/02 11pm" navigate={navigate}/>
-                    <AssignmentBox color="#0912F1" icon={globe_icon} subject="WORLD HISTORY" assignmentName="Homework 4" dueDate="12/01 11pm"/>
-                    <AssignmentBox color="#0CA838" subject="CHEMISTRY 2" assignmentName="Lab 3" dueDate="12/03 11pm"/>
+                    <AssignmentBox color="#F10909" icon={alg_icon} subject="ALGEBRA 1" assignmentName="Section 3.1" dueDate="12/02 11pm" navigate={navigate}/>
+                    <AssignmentBox color="#0912F1" icon={hist_icon} subject="WORLD HISTORY" assignmentName="Homework 4" dueDate="12/01 11pm"/>
+                    <AssignmentBox color="#0CA838" icon={chem_icon} subject="CHEMISTRY 2" assignmentName="Lab 3" dueDate="12/03 11pm"/>
                 </div>
                 <div id="completedAssignments" className="container" style={{
                     gridRowStart: 1,
@@ -81,12 +84,12 @@ function Homepage() {
                     <h2 className="container-title">
                         COMPLETED ASSIGNMENTS
                     </h2>
-                    <AssignmentBox color="#F18609" subject="ENGLISH 10" assignmentName="Essay 3" grade="94%"/>
-                    <AssignmentBox color="#0912F1" icon={globe_icon} subject="WORLD HISTORY" assignmentName="Homework 3" grade="100%"/>
-                    <AssignmentBox color="#F10909" subject="ALGEBRA 1" assignmentName="Section 2.3" grade="96%"/>
-                    <AssignmentBox color="#0CA838" subject="CHEMISTRY 2" assignmentName="Lab 2" grade="80%"/>
-                    <AssignmentBox color="#F10909" subject="ALGEBRA 1" assignmentName="Section 2.2" grade="90%"/>
-                    <AssignmentBox color="#0CA838" subject="CHEMISTRY 2" assignmentName="Lab 1" grade="85%"/>
+                    <AssignmentBox color="#F18609" icon={eng_icon} subject="ENGLISH 10" assignmentName="Essay 3" grade="94%"/>
+                    <AssignmentBox color="#0912F1" icon={hist_icon} subject="WORLD HISTORY" assignmentName="Homework 3" grade="100%"/>
+                    <AssignmentBox color="#F10909" icon={alg_icon} subject="ALGEBRA 1" assignmentName="Section 2.3" grade="96%"/>
+                    <AssignmentBox color="#0CA838" icon={chem_icon} subject="CHEMISTRY 2" assignmentName="Lab 2" grade="80%"/>
+                    <AssignmentBox color="#F10909" icon={alg_icon} subject="ALGEBRA 1" assignmentName="Section 2.2" grade="90%"/>
+                    <AssignmentBox color="#0CA838" icon={chem_icon} subject="CHEMISTRY 2" assignmentName="Lab 1" grade="85%"/>
                 </div>
                 <div id="goalsForTheWeek" className="container" style={{
                     gridColumnStart: 1,
@@ -98,9 +101,9 @@ function Homepage() {
                         GOALS FOR THE WEEK
                     </h2>
                     <div id="goalsBox">
-                        <GoalBox color="#F10909" goalName="SLO 3 - Fractions" goalType="Class Goal"/>
-                        <GoalBox color="#F10909" goalName="Review SLO 2 Questions" goalType="Teacher Set Goal"/>
-                        <GoalBox color="#F18609" goalName="Find Group for Final Project" goalType="Personal Goal"/>
+                        <GoalBox color="#F10909" icon={alg_icon} goalName="SLO 3 - Fractions" goalType="Class Goal"/>
+                        <GoalBox color="#F10909" icon={alg_icon} goalName="Review SLO 2 Questions" goalType="Teacher Set Goal"/>
+                        <GoalBox color="#F18609" icon={eng_icon} goalName="Find Group for Final Project" goalType="Personal Goal"/>
                         <GoalBox excludeIcon={true} goalName="Contribute to 3 Chat Posts" goalType="Personal Goal"/>
                     </div>
                 </div>
@@ -112,10 +115,10 @@ function Homepage() {
                         GRADES
                     </h2>
                     <div id="gradesBox">
-                        <AssignmentBox color="#F18609" subject="ENGLISH 10" assignmentName="87%"/>
-                        <AssignmentBox color="#0CA838" subject="CHEMISTRY 2" assignmentName="76%"/>
-                        <AssignmentBox color="#0912F1" icon={globe_icon} subject="WORLD HISTORY" assignmentName="79%"/>
-                        <AssignmentBox color="#F10909" subject="ALGEBRA 1" assignmentName="95%"/>
+                        <AssignmentBox color="#F18609" icon={eng_icon} subject="ENGLISH 10" assignmentName="87%"/>
+                        <AssignmentBox color="#0CA838" icon={chem_icon} subject="CHEMISTRY 2" assignmentName="76%"/>
+                        <AssignmentBox color="#0912F1" icon={hist_icon} subject="WORLD HISTORY" assignmentName="79%"/>
+                        <AssignmentBox color="#F10909" icon={alg_icon} subject="ALGEBRA 1" assignmentName="95%"/>
                     </div>
                 </div>
                 <div id="calendar" style={{
