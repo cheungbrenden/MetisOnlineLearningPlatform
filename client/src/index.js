@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Routes, Route, BrowserRouter} from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';
+import { CookiesProvider } from 'react-cookie';
 
 import Login from './Login';
 import Homepage from './Homepage';
@@ -9,13 +10,15 @@ import AssignmentOverview from './assignmentOverview';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-        <Routes>
-            <Route path="" element={<Login />} />
-            <Route path="home" element={<Homepage />} />
-            <Route path="assignment/overview" element={<AssignmentOverview />} />
-        </Routes>
-    </BrowserRouter>
+    <CookiesProvider>
+        <BrowserRouter>
+            <Routes>
+                <Route path="" element={<Login />} />
+                <Route path="home" element={<Homepage />} />
+                <Route path="assignment/overview" element={<AssignmentOverview />} />
+            </Routes>
+        </BrowserRouter>
+    </CookiesProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

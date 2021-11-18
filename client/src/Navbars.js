@@ -15,6 +15,9 @@ import chat_icon from './images/chat.svg';
 import progress_icon from './images/progress.svg';
 import goals_icon from './images/goals.svg';
 import {useNavigate} from "react-router-dom";
+import { useCookies } from 'react-cookie';
+import { useEffect, useState } from 'react';
+import { getUserData } from './Database';
 
 
 function NavWindow(props) {
@@ -30,13 +33,18 @@ function NavWindow(props) {
 }
 
 function TopNavBar(props) {
+    const [cookies] = useCookies(['user_uuid']);
+    const [user, setUser] = useState();
+    
+    useEffect(() => getUserData(cookies.user_uuid).then((user) => setUser(user)), [cookies.user_uuid]);
+
     return (
         <span id="topNavBar" className="background-blue">
             <img id="icon-logo" src={logo_icon} alt="Metis Logo" />
             <span id="text-metis" className="font-white font-bold">METIS</span>
             <span id="text-pageName" className="font-oblique font-condensed font-light font-white">{props.pageName}</span>
             <div id="profileInfo">
-                <div className="text-profileName font-darkBlue font-regular font-smallCaps">Panda Bear</div>
+                <div className="text-profileName font-darkBlue font-regular font-smallCaps">{user !== undefined && user.username}</div>
                 <img id="icon-profile" src={profile_icon} alt="Profile icon" />
             </div>
             <img id="icon-search" src={search_icon} />

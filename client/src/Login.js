@@ -5,6 +5,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import './Login.css';
 import './FontsAndColors.css'
+import { useCookies } from 'react-cookie';
 
 import {login} from "./Database"
 
@@ -13,6 +14,7 @@ function Login() {
     const [password, setPassword] = useState("");
     const [test, setTest] = useState(undefined);
     const navigate = useNavigate();
+    const setCookie = useCookies(['user_uuid'])[1];
 
     function validateForm() {
         return email.length > 0 && password.length > 0;
@@ -21,8 +23,10 @@ function Login() {
     function handleSubmit(event) {
         login(email, password).then(uuid => {
             console.log(uuid);
-            if (uuid)
+            if (uuid) {
+                setCookie('user_uuid', uuid, {path: "/", secure: true});
                 navigate('/home');
+            }
             else
                 setTest("Invalid login");
         });
