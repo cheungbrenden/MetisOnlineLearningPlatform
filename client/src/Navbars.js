@@ -14,6 +14,7 @@ import grades_icon from './images/grades.svg';
 import chat_icon from './images/chat.svg';
 import progress_icon from './images/progress.svg';
 import goals_icon from './images/goals.svg';
+import {useNavigate} from "react-router-dom";
 
 
 function NavWindow(props) {
@@ -45,10 +46,38 @@ function TopNavBar(props) {
 }
 
 function SideBarButton(props) {
+
+    const navigate = useNavigate();
+
+    function handleSubmit() {
+        let buttonName = props.name;
+        if (buttonName === 'Home') {
+            navigate('/home');
+        }
+        else if (buttonName === 'Classes') {
+            navigate('/classes');
+        }
+        else if (buttonName === 'Grades') {
+            navigate('/grades');
+        }
+        else if (buttonName === 'Chat') {
+            navigate('/chat');
+        }
+        else if (buttonName === 'Progress') {
+            navigate('/progress');
+        }
+        else if (buttonName === 'Goals') {
+            navigate('/goals');
+        }
+
+    }
+
     return (
-    <div className="sideBarButton">
+
+    <div onClick={handleSubmit} style={{cursor: 'pointer'}} className="sideBarButton">
         <img src={props.icon} className="sideBarButton-icon"/>
         <div className="sideBarButton-text">{props.name}</div>
+
     </div>
     );
 }
@@ -62,6 +91,7 @@ function SideNavBar() {
             <SideBarButton icon={chat_icon} name="Chat" />
             <SideBarButton icon={progress_icon} name="Progress" />
             <SideBarButton icon={goals_icon} name="Goals" />
+
         </div>
     )
 }
