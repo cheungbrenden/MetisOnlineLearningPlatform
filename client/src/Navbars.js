@@ -35,8 +35,18 @@ function NavWindow(props) {
 function TopNavBar(props) {
     const [cookies] = useCookies(['user_uuid']);
     const [user, setUser] = useState();
+
+    const navigate = useNavigate();
+
+    console.log(cookies.user_uuid)
+
     
-    useEffect(() => getUserData(cookies.user_uuid).then((user) => setUser(user)), [cookies.user_uuid]);
+    useEffect(() => {
+        if (cookies.user_uuid === undefined)
+            navigate("/");
+        else
+            getUserData(cookies.user_uuid).then((user) => setUser(user))
+    }, [cookies.user_uuid]);
 
     return (
         <span id="topNavBar" className="background-blue">
@@ -95,10 +105,10 @@ function SideNavBar() {
         <div id="sideNavBar" className="background-darkBlue font-smallCaps font-white font-regular">
             <SideBarButton icon={home_icon} name="Home" />
             <SideBarButton icon={classes_icon} name="Classes" />
-            <SideBarButton icon={grades_icon} name="Grades" />
+            {/* <SideBarButton icon={grades_icon} name="Grades" /> */}
             <SideBarButton icon={chat_icon} name="Chat" />
-            <SideBarButton icon={progress_icon} name="Progress" />
-            <SideBarButton icon={goals_icon} name="Goals" />
+            {/* <SideBarButton icon={progress_icon} name="Progress" />
+            <SideBarButton icon={goals_icon} name="Goals" /> */}
 
         </div>
     )

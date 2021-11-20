@@ -7,15 +7,35 @@ import { CookiesProvider } from 'react-cookie';
 import Login from './Login';
 import Homepage from './Homepage';
 import AssignmentOverview from './assignmentOverview';
+import NavWindow from './Navbars';
+
+import chat_screenshot from './images/chat_screenshot.png';
+import class_screenshot from './images/class_screenshot.png';
+
+function ImagePage(props) {
+    return (
+        <NavWindow pageName={props.pageName}>
+            <img src = {props.image} className="imagePage" style={{
+                // height: "100%",
+                width: "100%"
+            }}/>
+        </NavWindow>
+    );
+}
 
 ReactDOM.render(
   <React.StrictMode>
     <CookiesProvider>
         <BrowserRouter>
             <Routes>
-                <Route path="" element={<Login />} />
-                <Route path="home" element={<Homepage />} />
-                <Route path="assignment/overview" element={<AssignmentOverview />} />
+                <Route path="/" element={<Login />} />
+                <Route path="/home" element={<Homepage />} />
+                <Route path="/assignment/overview" element={<AssignmentOverview />} />
+                <Route path="/classes" element={<ImagePage image={class_screenshot} pageName="Classroom Dashboard"/>} />
+                <Route path="/grades" element={<NavWindow pageName="Grades"/>} />
+                <Route path="/chat" element={<ImagePage image={chat_screenshot} pageName="Chatroom"/>} />
+                <Route path="/progress" element={<NavWindow pageName="Progress"/>} />
+                <Route path="/goals" element={<NavWindow pageName="Goals"/>} />
             </Routes>
         </BrowserRouter>
     </CookiesProvider>
