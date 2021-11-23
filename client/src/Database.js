@@ -22,4 +22,18 @@ async function login(username, password) {
     });
 }
 
-export { login }
+async function getUserData(uuid) {
+    return await fetch("/getUserData/" + uuid, {
+        method: 'GET'
+    }).then(async (response) => {
+        if (response.status === 200) {
+            console.log(response)
+            let result = await response.json();
+            return result;
+        }
+        else
+            return undefined;
+    });
+}
+
+export { login, getUserData }
