@@ -1,0 +1,50 @@
+#assignmentQuestion {
+    display: inline-grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 5fr;
+    column-gap: 50px;
+    row-gap: 20px;
+    height: 100%;
+    width: 100%;
+    color: #3823A8;
+    padding: 20px;
+}
+
+#assignmentQuestion .infoBox {
+    /* text-align: center; */
+    border-radius: 28px;
+    background: #e4fafb;
+    box-sizing: border-box;
+    display: inline;
+    padding: 10px;
+    margin: 0;
+    position: relative;
+}
+
+#assignmentQuestion .infoBox-title {
+    font-weight: 700;
+    font-size: 25px;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#assignmentQuestion .problemNumber {
+    font-size: 36px;
+    text-align: justify;
+    text-justify: left;
+    padding: 10px;
+    padding-left: 30px;
+}
+
+#assignmentQuestion .answer {
+    font-style: oblique;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px;
+}
+
+#assignmentQuestion .answerBox {
+    border-radius: 35px;
+    border: 1px solid #3823a8;
+    width: 70px;
+}

@@ -13,6 +13,7 @@ import chat_screenshot from './images/chat_screenshot.png';
 import class_screenshot from './images/class_screenshot.png';
 import favicon_img from './images/grad cap logo.svg';
 import Favicon from 'react-favicon';
+import AssignmentQuestion from './AssignmentQuestion';
 
 function ImagePage(props) {
     return (
@@ -34,6 +35,7 @@ ReactDOM.render(
                 <Route path="/" element={<Login />} />
                 <Route path="/home" element={<Homepage />} />
                 <Route path="/assignment/overview" element={<AssignmentOverview />} />
+                <Route path="/assignment/question" element={<AssignmentQuestion />} />
                 <Route path="/classes" element={<ImagePage image={class_screenshot} pageName="Classroom Dashboard"/>} />
                 <Route path="/grades" element={<NavWindow pageName="Grades"/>} />
                 <Route path="/chat" element={<ImagePage image={chat_screenshot} pageName="Chatroom"/>} />
