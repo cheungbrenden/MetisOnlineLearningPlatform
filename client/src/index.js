@@ -11,6 +11,8 @@ import NavWindow from './Navbars';
 
 import chat_screenshot from './images/chat_screenshot.png';
 import class_screenshot from './images/class_screenshot.png';
+import favicon_img from './images/grad cap logo.svg';
+import Favicon from 'react-favicon';
 
 function ImagePage(props) {
     return (
@@ -25,6 +27,7 @@ function ImagePage(props) {
 
 ReactDOM.render(
   <React.StrictMode>
+    <Favicon url={favicon_img} iconSize="64"/>
     <CookiesProvider>
         <BrowserRouter>
             <Routes>
