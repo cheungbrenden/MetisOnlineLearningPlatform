@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./assignmentOverview.css";
 import NavWindow from "./Navbars";
 
@@ -46,7 +47,7 @@ function assignmentOverview() {
         </thead>
         <tr>
           <td> 1 </td>
-          <td>Problem 1</td>
+          <td><Link to="/assignment/question" replace>Problem 1</Link></td>
           <td>2</td>
           <td>Incomplete</td>
         </tr>
