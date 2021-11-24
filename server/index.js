@@ -43,6 +43,18 @@ app.get('/getUserData/:uuid', async (req, res) => {
         res.status(404).end();
 });
 
+app.get('/getSloScore/:uuid', async (req, res) => {
+    let uuid = req.params.uuid;
+    let { result } = await db.query("SELECT sloScore FROM users WHERE uuid=? LIMIT 1;", [uuid]);
+    console.log(result[0]);
+    if (result[0] !== undefined)
+        res.status(200).json(result[0]).end();
+    else
+        res.status(404).end();
+});
+
+
+//Don't add any functions below this line
 if (process.env.NODE_ENV === undefined || process.env.NODE_ENV.trimEnd() !== 'dev') { // For production build
     console.log("Using production build");
     app.use(express.static(path.join(__dirname, 'build')));
