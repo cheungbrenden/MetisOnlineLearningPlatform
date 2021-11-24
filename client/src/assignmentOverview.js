@@ -1,12 +1,43 @@
 import { Link } from "react-router-dom";
 import "./assignmentOverview.css";
 import NavWindow from "./Navbars";
+import {useNavigate} from "react-router-dom";
+import { useCookies } from 'react-cookie';
+import { useEffect, useState } from 'react';
+import { getSloScore } from './Database';
 
-function assignmentOverview() {
+function SloBox(props) {
+  const navigate = useNavigate();
+  if(!props.completedQuiz){
+    return(<button onClick={() => {if (props.navigate) props.navigate("/sloQuiz")}} disabled={props.navigate === undefined}> Take the Slo Quiz!</button>);
+  }
+  else{
+    return(<div className="purpleText">
+              <p id ="large">{props.sloScore}/10</p>
+                <p>Self Evaluation</p>                
+          </div>);
+    }
+  }
+
+function AssignmentOverview(props) {
+  const [cookies] = useCookies(['user_uuid']);
+  const [score,setScore]= useState();
+  const navigate = useNavigate();
+  console.log(cookies.user_uuid)
+  
+    useEffect(() => {
+      if (cookies.user_uuid === undefined)
+        navigate("/");
+      else
+        getSloScore(cookies.user_uuid).then((score) => setScore(score))
+      }, [cookies.user_uuid]);
+
+   
+
   return (
     <NavWindow>
     <div id="wrapper">
-      <div id="assignmentOverview" className="container">
+      <div id="AssignmentOverview" className="container">
         <h2>
           Assignment: <span className="purpleText"> Section 3.1 </span>
         </h2>
@@ -22,14 +53,13 @@ function assignmentOverview() {
       </div>
 
       <div id="Comprehension" className="container">
-        <h2>Comprehension:</h2>
-
-        <p id="large">5.7/10</p>
-        <p>Self Evaluation</p>
+        <h2>Comprehension</h2>
+          <SloBox completedQuiz={score!=="-1"} sloScore={score} navigate={navigate}/> 
       </div>
 
       <div id="Completion" className="container">
         <h2>Completion:</h2>
+
         <p>0/20 Problems</p>
         <p>0/40 Points</p>
       </div>
@@ -63,4 +93,4 @@ function assignmentOverview() {
   );
 }
 
-export default assignmentOverview;
+export default AssignmentOverview;

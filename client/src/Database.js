@@ -36,4 +36,20 @@ async function getUserData(uuid) {
     });
 }
 
-export { login, getUserData }
+async function getSloScore(uuid) {
+    return await fetch("/getSloScore/" + uuid, {
+        method: 'GET'
+    }).then(async (response) => {
+        if (response.status === 200) {
+            console.log(response)
+            let result = await response.json();
+            console.log(result.sloScore);
+            return result.sloScore;
+        }
+        else
+            return undefined;
+    });
+}
+
+
+export { login, getUserData, getSloScore }
