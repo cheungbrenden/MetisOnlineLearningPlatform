@@ -37,6 +37,7 @@
 }
 
 #assignmentQuestion .answer {
+    display:block;
     font-style: oblique;
     font-size: 24px;
     font-weight: bold;
@@ -48,3 +49,70 @@
     border: 1px solid #3823a8;
     width: 70px;
 }
+
+#assignmentQuestion #questionInfo {
+    padding: 20px;
+    font-size: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    position: relative;
+}
+
+#assignmentQuestion #submitButton {
+    color: #3823a8;
+    background-color: #f5c24c;
+    border-radius: 35px;
+    width: 200px;
+    height: 65px;
+    border: 1px solide #3823a8;
+}
+
+#assignmentQuestion #hintButton {
+    height: 50px;
+    width: 150px;
+    font-size: 15px;
+    background-color: white;
+    border-radius: 35px;
+    border: 1px solid #3823a8;
+}
+
+#assignmentQuestion .hintBox {
+    margin: 10px;
+    height: 150px;
+    width: 450px;
+    background-color: white;
+    border-radius: 28px;
+    border: 1px solid #3823a8;
+    font-size: 20px;
+    padding: 5px 5px 10px 10px;
+    position: relative;
+}
+
+#assignmentQuestion #exitHintButton {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+#assignmentQuestion .resultBox {
+    height: 150px;
+    width: 500px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    margin-left: -250px;
+    margin-top: -75px;
+    color: white;
+    font-size: 25px;
+    padding: 5px;
+}
+
+#assignmentQuestion #correctResultBox {
+    background-color: #0D890B70;
+}
+
+#assignmentQuestion #incorrectResultBox {
+    background-color: #F1090970
+}
+
