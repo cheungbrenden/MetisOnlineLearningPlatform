@@ -21,6 +21,12 @@ import { getUserData } from './Database';
 
 
 function NavWindow(props) {
+
+    if (props.pageName)
+        document.title = "Metis " + props.pageName;
+    else
+        document.title = "Metis";
+
     return (
         <div id="navWindow">
             <TopNavBar pageName={props.pageName}/>
@@ -38,9 +44,6 @@ function TopNavBar(props) {
 
     const navigate = useNavigate();
 
-    console.log(cookies.user_uuid)
-
-    
     useEffect(() => {
         if (cookies.user_uuid === undefined)
             navigate("/");

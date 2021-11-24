@@ -33,6 +33,8 @@ function Login() {
         event.preventDefault();
     }
 
+    document.title = "Metis Login";
+
     return (
         <div id="centerSpace" className="loginBackground" style={{
             gridTemplateColumns: "2fr 3fr",
