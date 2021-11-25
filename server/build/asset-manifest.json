@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.648af37a.chunk.css",
-    "main.js": "/static/js/main.7cb3ecac.chunk.js",
-    "main.js.map": "/static/js/main.7cb3ecac.chunk.js.map",
+    "main.css": "/static/css/main.3a4c9e99.chunk.css",
+    "main.js": "/static/js/main.cc2a4aec.chunk.js",
+    "main.js.map": "/static/js/main.cc2a4aec.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b40136d8.js",
     "runtime-main.js.map": "/static/js/runtime-main.b40136d8.js.map",
     "static/css/2.383c0125.chunk.css": "/static/css/2.383c0125.chunk.css",
-    "static/js/2.c15e082d.chunk.js": "/static/js/2.c15e082d.chunk.js",
-    "static/js/2.c15e082d.chunk.js.map": "/static/js/2.c15e082d.chunk.js.map",
+    "static/js/2.81fa84f6.chunk.js": "/static/js/2.81fa84f6.chunk.js",
+    "static/js/2.81fa84f6.chunk.js.map": "/static/js/2.81fa84f6.chunk.js.map",
     "static/js/3.c70647b8.chunk.js": "/static/js/3.c70647b8.chunk.js",
     "static/js/3.c70647b8.chunk.js.map": "/static/js/3.c70647b8.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.383c0125.chunk.css.map": "/static/css/2.383c0125.chunk.css.map",
-    "static/css/main.648af37a.chunk.css.map": "/static/css/main.648af37a.chunk.css.map",
-    "static/js/2.c15e082d.chunk.js.LICENSE.txt": "/static/js/2.c15e082d.chunk.js.LICENSE.txt",
+    "static/css/main.3a4c9e99.chunk.css.map": "/static/css/main.3a4c9e99.chunk.css.map",
+    "static/js/2.81fa84f6.chunk.js.LICENSE.txt": "/static/js/2.81fa84f6.chunk.js.LICENSE.txt",
     "static/media/book.8c848324.png": "/static/media/book.8c848324.png",
     "static/media/chat.486f8dce.svg": "/static/media/chat.486f8dce.svg",
     "static/media/chat_screenshot.30e56a1a.png": "/static/media/chat_screenshot.30e56a1a.png",
@@ -30,13 +30,14 @@
     "static/media/search.4f1c78e9.svg": "/static/media/search.4f1c78e9.svg",
     "static/media/settings.a10fd1de.svg": "/static/media/settings.a10fd1de.svg",
     "static/media/test.f9340a38.png": "/static/media/test.f9340a38.png",
+    "static/media/textbook example.eab46312.png": "/static/media/textbook example.eab46312.png",
     "static/media/worldwide.ef95da65.png": "/static/media/worldwide.ef95da65.png"
   },
   "entrypoints": [
     "static/js/runtime-main.b40136d8.js",
     "static/css/2.383c0125.chunk.css",
-    "static/js/2.c15e082d.chunk.js",
-    "static/css/main.648af37a.chunk.css",
-    "static/js/main.7cb3ecac.chunk.js"
+    "static/js/2.81fa84f6.chunk.js",
+    "static/css/main.3a4c9e99.chunk.css",
+    "static/js/main.cc2a4aec.chunk.js"
   ]
 }
