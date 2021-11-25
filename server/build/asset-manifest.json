@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/static/css/main.91de8142.chunk.css",
-    "main.js": "/static/js/main.2ff94c2d.chunk.js",
-    "main.js.map": "/static/js/main.2ff94c2d.chunk.js.map",
+    "main.css": "/static/css/main.648af37a.chunk.css",
+    "main.js": "/static/js/main.7cb3ecac.chunk.js",
+    "main.js.map": "/static/js/main.7cb3ecac.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.b40136d8.js",
     "runtime-main.js.map": "/static/js/runtime-main.b40136d8.js.map",
     "static/css/2.383c0125.chunk.css": "/static/css/2.383c0125.chunk.css",
-    "static/js/2.174cd71c.chunk.js": "/static/js/2.174cd71c.chunk.js",
-    "static/js/2.174cd71c.chunk.js.map": "/static/js/2.174cd71c.chunk.js.map",
+    "static/js/2.c15e082d.chunk.js": "/static/js/2.c15e082d.chunk.js",
+    "static/js/2.c15e082d.chunk.js.map": "/static/js/2.c15e082d.chunk.js.map",
     "static/js/3.c70647b8.chunk.js": "/static/js/3.c70647b8.chunk.js",
     "static/js/3.c70647b8.chunk.js.map": "/static/js/3.c70647b8.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.383c0125.chunk.css.map": "/static/css/2.383c0125.chunk.css.map",
-    "static/css/main.91de8142.chunk.css.map": "/static/css/main.91de8142.chunk.css.map",
-    "static/js/2.174cd71c.chunk.js.LICENSE.txt": "/static/js/2.174cd71c.chunk.js.LICENSE.txt",
+    "static/css/main.648af37a.chunk.css.map": "/static/css/main.648af37a.chunk.css.map",
+    "static/js/2.c15e082d.chunk.js.LICENSE.txt": "/static/js/2.c15e082d.chunk.js.LICENSE.txt",
     "static/media/book.8c848324.png": "/static/media/book.8c848324.png",
     "static/media/chat.486f8dce.svg": "/static/media/chat.486f8dce.svg",
     "static/media/chat_screenshot.30e56a1a.png": "/static/media/chat_screenshot.30e56a1a.png",
-    "static/media/class_screenshot.efdef411.png": "/static/media/class_screenshot.efdef411.png",
+    "static/media/class_screenshot.94cacd7e.png": "/static/media/class_screenshot.94cacd7e.png",
     "static/media/classes.315fdcf2.svg": "/static/media/classes.315fdcf2.svg",
     "static/media/goals.5b142223.svg": "/static/media/goals.5b142223.svg",
     "static/media/grad cap logo.09dac097.svg": "/static/media/grad cap logo.09dac097.svg",
@@ -35,8 +35,8 @@
   "entrypoints": [
     "static/js/runtime-main.b40136d8.js",
     "static/css/2.383c0125.chunk.css",
-    "static/js/2.174cd71c.chunk.js",
-    "static/css/main.91de8142.chunk.css",
-    "static/js/main.2ff94c2d.chunk.js"
+    "static/js/2.c15e082d.chunk.js",
+    "static/css/main.648af37a.chunk.css",
+    "static/js/main.7cb3ecac.chunk.js"
   ]
 }
