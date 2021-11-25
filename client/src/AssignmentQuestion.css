@@ -37,7 +37,6 @@
 }
 
 #assignmentQuestion .answer {
-    display:block;
     font-style: oblique;
     font-size: 24px;
     font-weight: bold;
@@ -47,7 +46,8 @@
 #assignmentQuestion .answerBox {
     border-radius: 35px;
     border: 1px solid #3823a8;
-    width: 70px;
+    width: 100px;
+    margin-right: 50px;
 }
 
 #assignmentQuestion #questionInfo {
@@ -55,7 +55,6 @@
     font-size: 36px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
     position: relative;
 }
 
@@ -63,15 +62,23 @@
     color: #3823a8;
     background-color: #f5c24c;
     border-radius: 35px;
-    width: 200px;
-    height: 65px;
+    width: 250px;
+    height: 55px;
     border: 1px solide #3823a8;
+}
+
+#assignmentQuestion #helpButtons {
+    text-align: right;
+}
+
+#assignmentQuestion .helpButton {
+    margin-left: 10px;
 }
 
 #assignmentQuestion #hintButton {
     height: 50px;
     width: 150px;
-    font-size: 15px;
+    font-size: 20px;
     background-color: white;
     border-radius: 35px;
     border: 1px solid #3823a8;
@@ -89,7 +96,17 @@
     position: relative;
 }
 
-#assignmentQuestion #exitHintButton {
+#assignmentQuestion #textbook {
+    height: 100%;
+}
+
+#assignmentQuestion #textbookBox {
+    height: 700px;
+    width: min-content;
+    position: relative;
+}
+
+#assignmentQuestion #exitButton {
     position: absolute;
     top: 5px;
     right: 5px;
@@ -97,11 +114,11 @@
 
 #assignmentQuestion .resultBox {
     height: 150px;
-    width: 500px;
+    width: 700px;
     position: absolute;
     top: 50%;
-    left: 30%;
-    margin-left: -250px;
+    left: 50%;
+    margin-left: -350px;
     margin-top: -75px;
     color: white;
     font-size: 25px;
@@ -116,3 +133,9 @@
     background-color: #F1090970
 }
 
+#assignmentQuestion #correctResultBox button {
+    background-color: white;
+    border-radius: 30px;
+    width: 300px;
+    margin: 5px;
+}

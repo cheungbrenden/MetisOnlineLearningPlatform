@@ -1,15 +1,41 @@
 import NavWindow from "./Navbars";
 import './AssignmentQuestion.css'
 import { useState } from "react";
+import { useNavigate, useParams } from "react-router";
+import textbook_example from "./images/textbook example.png"
+import textbook_icon from "./images/textbook icon.png";
+import chat_icon from "./images/question_chat_icon.png";
+import { updateUserAssignmentCompletion } from "./Database";
+import { useCookies } from "react-cookie";
 
 function ResultBox(props) {
+    const navigate = useNavigate();
+
     if (props.correct) {
         return (
             <div id="correctResultBox" className="resultBox">
-                Great job! <br/>
-                <b className="font-oblique">y</b> = 3,
-                <b className="font-oblique"> u</b> = 4 <br/>
-                Move on to <b>Problem 2</b> (SLO 3.1)
+                <span>
+                    <div style={{display: "inline-block"}}>
+                        Great job! <br/>
+                        <b className="font-oblique">y</b> = 3,
+                        <b className="font-oblique"> u</b> = 4 <br/>
+                        Move on to <b>Problem 2</b> (SLO 3.1)
+                    </div>
+                    <div style={{display: "inline-block"}}>
+                        <button style={{display: "block"}} onClick={() => navigate('/assignment/overview')}>
+                            Back to Assignment
+                        </button>
+                        <button onClick={() => {
+                            props.setFirst("");
+                            props.setSecond("");
+                            props.setShowResult(false);
+                            props.setShowHint(false);
+                            navigate('/assignment/question/2');
+                        }}>
+                            Next Problem
+                        </button>
+                    </div>
+                </span>
             </div>
         );
     }
@@ -25,11 +51,14 @@ function ResultBox(props) {
 }
 
 function AssignmentQuestion() {
-
     const [first, setFirst] = useState('');
     const [second, setSecond] = useState('');
     const [showHint, setShowHint] = useState(false);
+    const [showText, setShowText] = useState(false);
     const [showResult, setShowResult] = useState(false);
+    const navigate = useNavigate();
+    const {num} = useParams();
+    const [cookies] = useCookies(['user_uuid']);
 
     return (
         <NavWindow>
@@ -46,7 +75,7 @@ function AssignmentQuestion() {
                     gridColumnEnd: "-1",
                     gridRow: "1"
                 }}>
-                    <span className="font-bold">Problem 1 (SLO 3.1)</span>
+                    <span className="font-bold">Problem {num} (SLO 3.1)</span>
                     <span style={{
                         position: "absolute",
                         right: "15px"
@@ -69,52 +98,70 @@ function AssignmentQuestion() {
                         </div>
                     </div>
                     <div>
-                        <button id="hintButton" className="font-darkBlue font-bold" onClick={() => setShowHint(true)}>
-                            Need a hint?
-                        </button>
+                        <div id="helpButtons">
+                            <button id="hintButton" className="font-darkBlue font-bold helpButton" onClick={() => setShowHint(true)}>
+                                Need a hint?
+                            </button>
+                            <img src={chat_icon} className="helpButton" onClick={() => navigate("/chat")} />
+                            <img src={textbook_icon} className="helpButton" onClick={() => setShowText(!showText)} />
+                        </div>
                         { showHint && (
                             <div className="hintBox">
-                                <button id="exitHintButton" onClick={() => setShowHint(false)}>X</button>
+                                <button id="exitButton" onClick={() => setShowHint(false)}>X</button>
                                 Hint 1 of 1 <br/> <br/>
                                 Use one equation to solve for <b className="font-oblique">u</b>.
                                 Then substitute in the other equation to solve for <b className="font-oblique">y</b>.
                             </div>
                         )}
+                        { showText &&
+                            <div id="textbookBox">
+                                <img id="textbook" src={textbook_example} />
+                                <button id="exitButton" onClick={() => setShowText(false)}>X</button>
+                            </div>
+                        }
                     </div>
-                    <div>
-                        <form>
-                            Input Answer:
-                            <label className="answer">
-                                u= <input className="answerBox" 
-                                    type="text"
-                                    name="u" 
-                                    value={first} 
-                                    autoComplete={false}
-                                    onChange={(event) => {
-                                        setFirst(event.target.value);
-                                        setShowResult(false);
-                                    }}
-                                    />
-                            </label>
-                            <label className="answer">
-                                y= <input className="answerBox" 
-                                    type="text"
-                                    name="y"
-                                    value={second}
-                                    autoComplete={false}
-                                    onChange={(event) => {
-                                        setSecond(event.target.value);
-                                        setShowResult(false);
-                                    }}/>
-                            </label>
-                        </form>
-                        <button id="submitButton" type="submit" onClick={function() {
+                    { !showText && <div style={{
+                        position:"absolute",
+                        right: "30px",
+                        bottom: "30px"
+                    }}>
+                        Input Answer:
+                        <div className="answer">
+                            u= <input className="answerBox" 
+                                type="text"
+                                name="u" 
+                                value={first} 
+                                autoComplete={false}
+                                onChange={(event) => {
+                                    setFirst(event.target.value);
+                                    setShowResult(false);
+                                }} />
+                        </div>
+                        <div className="answer" style={{display: "inline"}}>
+                            y= <input className="answerBox" 
+                                type="text"
+                                name="y"
+                                value={second}
+                                autoComplete={false}
+                                onChange={(event) => {
+                                    setSecond(event.target.value);
+                                    setShowResult(false);
+                                }} />
+                        </div>
+                        <button id="submitButton" onClick={function() {
+                            if (first=="4" && second=="3")
+                                updateUserAssignmentCompletion(cookies.user_uuid, 1, num);
                             setShowResult(true);
                         }}>
                             Submit
                         </button>
                     </div>
-                    { showResult && <ResultBox correct={first=="4" && second=="3"}/> }
+                    }
+                    { showResult && <ResultBox correct={first=="4" && second=="3"} 
+                        setFirst={setFirst} 
+                        setSecond={setSecond} 
+                        setShowHint={setShowHint} 
+                        setShowResult={setShowResult}/> }
                 </div>
             </div>
         </NavWindow>

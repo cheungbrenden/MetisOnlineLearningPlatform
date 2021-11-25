@@ -4,6 +4,7 @@
     display: inline;
     border-radius: 28px;
     background: #e4fafb;
+    padding: 5px;
 }
 
 .container-title {
@@ -33,6 +34,7 @@
     border: 1px solid #3823A8;
     position: relative;
     padding: 0;
+    
 }
 
 .assignment-leftBox {

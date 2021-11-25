@@ -35,7 +35,7 @@ ReactDOM.render(
                 <Route path="/" element={<Login />} />
                 <Route path="/home" element={<Homepage />} />
                 <Route path="/assignment/overview" element={<AssignmentOverview />} />
-                <Route path="/assignment/question" element={<AssignmentQuestion />} />
+                <Route path="/assignment/question/:num" element={<AssignmentQuestion />} />
                 <Route path="/classes" element={<ImagePage image={class_screenshot} pageName="Classroom Dashboard"/>} />
                 <Route path="/grades" element={<NavWindow pageName="Grades"/>} />
                 <Route path="/chat" element={<ImagePage image={chat_screenshot} pageName="Chatroom"/>} />

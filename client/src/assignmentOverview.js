@@ -4,7 +4,7 @@ import NavWindow from "./Navbars";
 import {useNavigate} from "react-router-dom";
 import { useCookies } from 'react-cookie';
 import { useEffect, useState } from 'react';
-import { getSloScore } from './Database';
+import { getSloScore, getUserAssignmentCompletion } from './Database';
 
 function SloBox(props) {
   const navigate = useNavigate();
@@ -17,20 +17,37 @@ function SloBox(props) {
                 <p>Self Evaluation</p>                
           </div>);
     }
-  }
+}
 
 function AssignmentOverview(props) {
   const [cookies] = useCookies(['user_uuid']);
   const [score,setScore]= useState();
+  const [p1Complete, setP1Complete] = useState(false);
+  const [p2Complete, setP2Complete] = useState(false);
+  const [totalComplete, setTotalComplete] = useState(0);
   const navigate = useNavigate();
   console.log(cookies.user_uuid)
   
     useEffect(() => {
       if (cookies.user_uuid === undefined)
         navigate("/");
+      else {
+        getSloScore(cookies.user_uuid).then((score) => setScore(score));
+        getUserAssignmentCompletion(cookies.user_uuid, 1).then((result) => {
+            setP1Complete(result.problem1);
+            setP2Complete(result.problem2);
+        });
+      }
+    }, [cookies.user_uuid]);
+
+    useEffect(() => {
+      if (p1Complete && p2Complete)
+        setTotalComplete(2)
+      else if (p1Complete || p2Complete)
+        setTotalComplete(1)
       else
-        getSloScore(cookies.user_uuid).then((score) => setScore(score))
-      }, [cookies.user_uuid]);
+        setTotalComplete(0);
+    }, [p1Complete, p2Complete])
 
    
 
@@ -60,8 +77,8 @@ function AssignmentOverview(props) {
       <div id="Completion" className="container">
         <h2>Completion:</h2>
 
-        <p>0/20 Problems</p>
-        <p>0/40 Points</p>
+        <p>{totalComplete}/2 Problems</p>
+        <p>{totalComplete * 2}/4 Points</p>
       </div>
 
       
@@ -77,15 +94,15 @@ function AssignmentOverview(props) {
         </thead>
         <tr>
           <td> 1 </td>
-          <td><Link to="/assignment/question" replace>Problem 1</Link></td>
+          <td>{p1Complete ? 'Problem1' : <Link to="/assignment/question/1">Problem 1</Link>}</td>
           <td>2</td>
-          <td>Incomplete</td>
+          <td>{p1Complete ? 'Complete' : 'Incomplete'}</td>
         </tr>
         <tr>
           <td> 2 </td>
-          <td>Problem 2</td>
+          <td>{p2Complete ? 'Problem 2' :<Link to="/assignment/question/2">Problem 2</Link>}</td>
           <td>2</td>
-          <td>Incomplete</td>
+          <td>{p2Complete ? 'Complete' : 'Incomplete'}</td>
         </tr>
       </table>
     </div>

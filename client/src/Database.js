@@ -51,5 +51,32 @@ async function getSloScore(uuid) {
     });
 }
 
+async function getUserAssignmentCompletion(uuid, assignmentID) {
+    return await fetch("/getUserAssignmentCompletion/" + uuid + "/" + assignmentID, {
+        method: "GET",
+    }).then(async (response) => {
+        if (response.status === 200) {
+            console.log(response)
+            let result = await response.json();
+            return result;
+        }
+        else
+            return undefined;
+    });
+}
 
-export { login, getUserData, getSloScore }
+async function updateUserAssignmentCompletion(uuid, assignmentID, problem) {
+    return await fetch("/updateUserAssignmentCompletion/" + uuid + "/" + assignmentID + "/" + problem, {
+        method: 'POST',
+    }).then(async (response) => { 
+        if (response.status === 200) {
+            console.log(response)
+            return true;
+        }
+        else
+            return false;
+    });
+}
+
+
+export { login, getUserData, getSloScore, getUserAssignmentCompletion, updateUserAssignmentCompletion }
