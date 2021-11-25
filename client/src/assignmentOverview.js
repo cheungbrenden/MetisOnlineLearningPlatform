@@ -9,7 +9,7 @@ import { getSloScore } from './Database';
 function SloBox(props) {
   const navigate = useNavigate();
   if(!props.completedQuiz){
-    return(<button onClick={() => {if (props.navigate) props.navigate("/sloQuiz")}} disabled={props.navigate === undefined}> Take the Slo Quiz!</button>);
+    return(<button id="sloButton" onClick={() => {if (props.navigate) props.navigate("/sloQuiz")}} disabled={props.navigate === undefined}> Take the Slo Quiz!</button>);
   }
   else{
     return(<div className="purpleText">
