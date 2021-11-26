@@ -33,19 +33,6 @@ h2 {
   font-size: 50px;
 }
 
-#tableWrap {
-  position: fixed;
-  display: inline;
-  text-align: center;
-  color: #3823a8;
-  background: #e4fafb;
-  margin: 30px;
-  width: 90%;
-  font-size: 25px;
-  border-radius: 28px;
-  border-collapse: separate;
-}
-
 #sloButton {
   background-color: #F5C24C; 
   border: none;
@@ -58,10 +45,22 @@ h2 {
   margin:25px;
   border-radius: 28px;
 }
+
+#tableWrap {
+  display: inline;
+  text-align: center;
+  color: #3823a8;
+  background:white;
+  margin: 30px;
+  width: 90%;
+  font-size: 25px;
+  border-radius: 28px;
+  border-collapse: separate;
+}
+
 thead {
   background: #F5C24C;
   line-height: 50px;
-  border-radius: 28px;
 }
 
 tr {
@@ -73,11 +72,25 @@ tr:nth-child(2)
   background-color: #F1FEFF;
 }
 
-table {
+#problemTable {
   width: 100%;
-  border-radius: 28px;
+  border-collapse: collapse; 
+  border-spacing: 0;
+  background-color: #E4FAFB;
 }
 
 th,td{
   font-size: 25px;
+}
+
+th:first-child {
+  border-radius: 28px 0 0 0;
+}
+
+th:last-child {
+  border-radius: 0 28px 0 0;
+}
+
+th:only-child{
+  border-radius: 28px 28px 0 0;
 }

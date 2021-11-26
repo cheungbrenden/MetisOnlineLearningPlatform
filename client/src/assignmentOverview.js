@@ -85,7 +85,7 @@ function AssignmentOverview(props) {
     </div>
     
     <div id="tableWrap">
-      <table>
+      <table id="problemTable">
         <thead>
           <th>#</th>
           <th>Title</th>
