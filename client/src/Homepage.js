@@ -49,7 +49,7 @@ function Homepage() {
                 gridTemplateRows: "3fr 2fr 1fr",
                 rowGap: "10px"
             }}>
-                <div id="upcomingAssignments" className="container" style={{
+                <div id="upcomingAssignments" className="homePage-container" style={{
                     gridColumnStart: 1,
                     gridColumnEnd: 2,
                     gridRowStart: 1,
@@ -63,7 +63,7 @@ function Homepage() {
                     <AssignmentBox color="#0CA838" icon={chem_icon} subject="CHEMISTRY 2" assignmentName="Lab 3 Quiz" dueDate="12/04 11pm"/>
                     <AssignmentBox color="#F18609" icon={eng_icon} subject="ENGLISH 10" assignmentName="Essay 4" dueDate="12/05 11pm"/>
                 </div>
-                <div id="inProgressAssignments" className="container" style={{
+                <div id="inProgressAssignments" className="homePage-container" style={{
                     gridColumnStart: 2,
                     gridColumnEnd: 3,
                     gridRowStart: 1,
@@ -76,7 +76,7 @@ function Homepage() {
                     <AssignmentBox color="#0912F1" icon={hist_icon} subject="WORLD HISTORY" assignmentName="Homework 4" dueDate="12/01 11pm"/>
                     <AssignmentBox color="#0CA838" icon={chem_icon} subject="CHEMISTRY 2" assignmentName="Lab 3" dueDate="12/03 11pm"/>
                 </div>
-                <div id="completedAssignments" className="container" style={{
+                <div id="completedAssignments" className="homePage-container" style={{
                     gridRowStart: 1,
                     gridRowEnd: 2,
                     gridColumn: 3
@@ -91,7 +91,7 @@ function Homepage() {
                     <AssignmentBox color="#F10909" icon={alg_icon} subject="ALGEBRA 1" assignmentName="Section 2.2" grade="90%"/>
                     <AssignmentBox color="#0CA838" icon={chem_icon} subject="CHEMISTRY 2" assignmentName="Lab 1" grade="85%"/>
                 </div>
-                <div id="goalsForTheWeek" className="container" style={{
+                <div id="goalsForTheWeek" className="homePage-container" style={{
                     gridColumnStart: 1,
                     gridColumnEnd: 3,
                     gridRowStart: 2,
@@ -107,7 +107,7 @@ function Homepage() {
                         <GoalBox excludeIcon={true} goalName="Contribute to 3 Chat Posts" goalType="Personal Goal"/>
                     </div>
                 </div>
-                <div id="grades" className="container" style={{
+                <div id="grades" className="homePage-container" style={{
                     gridRow: 2,
                     gridColumn: 3
                 }}>
