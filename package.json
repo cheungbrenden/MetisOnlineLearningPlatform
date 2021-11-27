@@ -8,7 +8,8 @@
     "mysql": "^2.18.1",
     "react-cookie": "^4.1.1",
     "react-router-dom": "^6.0.2",
-    "react-scripts": "^4.0.3"
+    "react-scripts": "^4.0.3",
+    "styled-components": "^5.3.3"
   },
   "engines": {
     "node": "^14.16.1"

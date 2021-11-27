@@ -43,6 +43,7 @@ ReactDOM.render(
                 <Route path="/progress" element={<NavWindow pageName="Progress"/>} />
                 <Route path="/goals" element={<NavWindow pageName="Goals"/>} />
                 <Route path="/sloQuiz" element={<SLOQuiz />} />
+
             </Routes>
         </BrowserRouter>
     </CookiesProvider>

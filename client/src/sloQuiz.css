@@ -4,8 +4,6 @@
     display: grid;
     width: 100vw;
     height: 100vh;
-    /* width: 100%; */
-    /* height: 100%; */
 }
 
 #sloQuiz {
@@ -25,15 +23,9 @@ h2 {
     font-size: 40px;
 }
 
-#SignIn {
-    width: 100%;
-    background-color: #f5c24c;
-}
-
 .radioButton {
 
     background-color: #6ac9e6;
-    border: none;
     color: white;
     padding: 15px 32px;
     text-align: center;
@@ -41,9 +33,14 @@ h2 {
     display: inline-block;
     font-size: 20px;
     border-radius: 100%;
-
     margin: 0 2%;
 }
+
+.radioButton-selected {
+    border: 0.3em solid #3823a8;
+}
+
+
 
 .buttonGroup {
     padding: 20px 50px;

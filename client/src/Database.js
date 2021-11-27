@@ -11,13 +11,12 @@ async function login(username, password) {
             username: username,
             password: password
         })
-    }).then(async (response) => { 
+    }).then(async (response) => {
         if (response.status === 200) {
             console.log(response)
             let result = await response.json();
             return result.uuid;
-        }
-        else
+        } else
             return undefined;
     });
 }
@@ -30,8 +29,7 @@ async function getUserData(uuid) {
             console.log(response)
             let result = await response.json();
             return result;
-        }
-        else
+        } else
             return undefined;
     });
 }
@@ -45,8 +43,27 @@ async function getSloScore(uuid) {
             let result = await response.json();
             console.log(result.sloScore);
             return result.sloScore;
-        }
-        else
+        } else
+            return undefined;
+    });
+}
+
+async function setSLOscore(uuid, sloScore) {
+    return await fetch("/postSLOscore", {
+        method: 'POST',
+        //mode: 'cors',
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            uuid: uuid,
+            sloScore: sloScore
+        })
+    }).then(async (response) => {
+        if (response.status === 200) {
+            console.log(response);
+            return true;
+        } else
             return undefined;
     });
 }
@@ -59,8 +76,7 @@ async function getUserAssignmentCompletion(uuid, assignmentID) {
             console.log(response)
             let result = await response.json();
             return result;
-        }
-        else
+        } else
             return undefined;
     });
 }
@@ -68,15 +84,14 @@ async function getUserAssignmentCompletion(uuid, assignmentID) {
 async function updateUserAssignmentCompletion(uuid, assignmentID, problem) {
     return await fetch("/updateUserAssignmentCompletion/" + uuid + "/" + assignmentID + "/" + problem, {
         method: 'POST',
-    }).then(async (response) => { 
+    }).then(async (response) => {
         if (response.status === 200) {
             console.log(response)
             return true;
-        }
-        else
+        } else
             return false;
     });
 }
 
 
-export { login, getUserData, getSloScore, getUserAssignmentCompletion, updateUserAssignmentCompletion }
+export {login, getUserData, getSloScore, setSLOscore, getUserAssignmentCompletion, updateUserAssignmentCompletion}

@@ -67,7 +67,7 @@ app.get('/getUserAssignmentCompletion/:uuid/:aid', async (req, res) => {
 app.post('/updateUserAssignmentCompletion/:uuid/:aid/:problem', async (req, res) => {
     let uuid = req.params.uuid;
     let aid = req.params.aid;
-    let p = req.params.problem
+    let p = req.params.problem;
     let result = undefined;
     if (p == 1)
         result = await db.query("UPDATE user_assignments SET problem1=1 WHERE user_uuid=? AND assignment_id=? LIMIT 1;", [uuid, aid]);
@@ -88,6 +88,18 @@ app.get('/resetUserAssignments', async (req, res) => {
     else
         res.status(404).end();
 })
+
+app.post('/postSLOscore', async (req, res) => {
+    let uuid = req.body.uuid;
+    let SLOscore = req.body.sloScore;
+    let { result } = await db.query("UPDATE user_assignments SET slo_score=? WHERE user_uuid=? AND assignment_id=1 LIMIT 1",
+        [SLOscore, uuid]);
+    console.log(result);
+    if (result !== undefined)
+        res.status(200).json(result[0]).end();
+    else
+        res.status(404).end();
+});
 
 //Don't add any functions below this line
 if (process.env.NODE_ENV === undefined || process.env.NODE_ENV.trimEnd() !== 'dev') { // For production build
