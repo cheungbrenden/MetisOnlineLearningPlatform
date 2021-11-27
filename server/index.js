@@ -81,7 +81,7 @@ app.post('/updateUserAssignmentCompletion/:uuid/:aid/:problem', async (req, res)
 });
 
 app.get('/resetUserAssignments', async (req, res) => {
-    let result = await db.query("UPDATE user_assignments SET problem1=0, problem2=0");
+    let result = await db.query("UPDATE user_assignments SET slo_score='-1', problem1=0, problem2=0");
     console.log(result);
     if (result !== undefined)
         res.send("Reset complete").end();

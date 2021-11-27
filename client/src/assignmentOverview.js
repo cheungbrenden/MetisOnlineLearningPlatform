@@ -94,7 +94,7 @@ function AssignmentOverview(props) {
         </thead>
         <tr>
           <td> 1 </td>
-          <td>{p1Complete ? 'Problem1' : <Link to="/assignment/question/1">Problem 1</Link>}</td>
+          <td>{p1Complete ? 'Problem 1' : <Link to="/assignment/question/1">Problem 1</Link>}</td>
           <td>2</td>
           <td>{p1Complete ? 'Complete' : 'Incomplete'}</td>
         </tr>
