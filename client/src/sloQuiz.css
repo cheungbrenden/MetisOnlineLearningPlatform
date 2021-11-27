@@ -8,15 +8,16 @@
     /* height: 100%; */
 }
 
-#info {
+#sloQuiz {
     margin: 15px auto;
     max-width: 80%;
-    padding: 15px;
+    padding-top: 15px;
     border-style: solid;
-    border-radius: 40px;
+    border-top-right-radius: 40px;
+    border-top-left-radius: 40px;
     border-width: thin;
-    background-color: white;
-
+    background-color: #f5c24c;
+    border-collapse: collapse;
     max-height: 100%;
 }
 
@@ -29,23 +30,64 @@ h2 {
     background-color: #f5c24c;
 }
 
-#CreateAccount {
-    width: 40%;
-    background-color: #6ac9e6;
-    margin-right: 5%;
-}
-
-#ForgotCredentials {
-    width: 55%;
-    background-color: #6ac9e6;
-
-}
-
 .radioButton {
-    width: 3%;
+
+    background-color: #6ac9e6;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 100%;
+
     margin: 0 2%;
 }
 
 .buttonGroup {
-    margin: 0 auto;
+    padding: 20px 50px;
+    margin-top:-10px;
+
+
+}
+
+#mainHeading {
+    width: 95%;
+    padding: 20px 30px;
+    margin: auto;
+
+}
+
+.questionText {
+    padding: 20px 30px;
+}
+
+h2 {
+    font-size: 30px;
+}
+
+#Submit {
+    margin: 40px 120px;
+}
+
+.SubmitButtons {
+    margin: 20px;
+    position: relative;
+    float: right;
+    border: none;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 30px;
+    border-radius: 24px;
+}
+
+#SubmitAndBegin {
+    width: 40%;
+}
+
+#SubmitAndSave {
+    width: 30%;
 }
