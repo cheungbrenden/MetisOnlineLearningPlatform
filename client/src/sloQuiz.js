@@ -9,16 +9,6 @@ import NavWindow from "./Navbars";
 
 function sloQuiz() {
 
-    let q1 = 1;
-    let q2 = 0;
-    let q3 = 0;
-    let q4 = 0;
-
-    function toggleBorder(status) {
-        if (status == 0) {
-            alert("test");
-        }
-    }
 
     return (
         <NavWindow>
@@ -37,16 +27,16 @@ function sloQuiz() {
                             substitution, and elimination methods.</h3>
                     </div>
                     <div className="buttonGroup background-white">
-                        <button onClick={toggleBorder(q1)} className="radioButton">1</button>
-                        <button onClick={toggleBorder(q1)} className="radioButton">2</button>
-                        <button onClick={toggleBorder(q1)} className="radioButton">3</button>
-                        <button onClick={toggleBorder(q1)} className="radioButton">4</button>
-                        <button onClick={toggleBorder(q1)} className="radioButton">5</button>
-                        <button onClick={toggleBorder(q1)} className="radioButton">6</button>
-                        <button onClick={toggleBorder(q1)} className="radioButton">7</button>
-                        <button onClick={toggleBorder(q1)} className="radioButton">8</button>
-                        <button onClick={toggleBorder(q1)} className="radioButton">9</button>
-                        <button onClick={toggleBorder(q1)} className="radioButton">10</button>
+                        <button className="radioButton">1</button>
+                        <button className="radioButton">2</button>
+                        <button className="radioButton">3</button>
+                        <button className="radioButton">4</button>
+                        <button className="radioButton">5</button>
+                        <button className="radioButton">6</button>
+                        <button className="radioButton">7</button>
+                        <button className="radioButton">8</button>
+                        <button className="radioButton">9</button>
+                        <button className="radioButton">10</button>
                     </div>
                     <div className="background-lightBlue font-darkBlue">
                         <h3 className="questionText">SLO 3.2 ~ Set up stated problems algebraically
