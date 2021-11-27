@@ -8,6 +8,7 @@ import Login from './Login';
 import Homepage from './Homepage';
 import AssignmentOverview from './assignmentOverview';
 import NavWindow from './Navbars';
+import SLOQuiz from './sloQuiz';
 
 import chat_screenshot from './images/chat_screenshot.png';
 import class_screenshot from './images/class_screenshot.png';
@@ -41,6 +42,7 @@ ReactDOM.render(
                 <Route path="/chat" element={<ImagePage image={chat_screenshot} pageName="Chatroom"/>} />
                 <Route path="/progress" element={<NavWindow pageName="Progress"/>} />
                 <Route path="/goals" element={<NavWindow pageName="Goals"/>} />
+                <Route path="/sloQuiz" element={<SLOQuiz />} />
             </Routes>
         </BrowserRouter>
     </CookiesProvider>
