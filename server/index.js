@@ -87,7 +87,7 @@ app.get('/resetUserAssignments', async (req, res) => {
         res.send("Reset complete").end();
     else
         res.status(404).end();
-})
+});
 
 app.post('/postSLOscore', async (req, res) => {
     let uuid = req.body.uuid;
