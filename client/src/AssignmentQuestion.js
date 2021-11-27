@@ -64,7 +64,7 @@ function AssignmentQuestion() {
         <NavWindow>
             <div id="assignmentQuestion">
                 <div className="infoBox">
-                    <div className="infoBox-title">Assignment: Section 3.2</div>
+                    <div className="infoBox-title">Assignment: Section 3.1</div>
                     <div>
                         <span className="font-bold">Class:</span> Algebra 1
                     </div>

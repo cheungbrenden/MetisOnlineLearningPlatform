@@ -87,7 +87,7 @@ app.get('/resetUserAssignments', async (req, res) => {
         res.send("Reset complete").end();
     else
         res.status(404).end();
-})
+});
 
 //Don't add any functions below this line
 if (process.env.NODE_ENV === undefined || process.env.NODE_ENV.trimEnd() !== 'dev') { // For production build
