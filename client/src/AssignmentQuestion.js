@@ -19,13 +19,17 @@ function ResultBox(props) {
                         Great job! <br/>
                         <b className="font-oblique">y</b> = 3,
                         <b className="font-oblique"> u</b> = 4 <br/>
-                        Move on to <b>Problem 2</b> (SLO 3.1)
+                        {props.final ? <span>You finished the assignment!</span> : <span>Move on to <b>Problem 2</b> (SLO 3.1)</span> }
                     </div>
-                    <div style={{display: "inline-block"}}>
+                    <div style={{
+                        position: "absolute",
+                        right: "15px",
+                        top: "15px"
+                    }}>
                         <button style={{display: "block"}} onClick={() => navigate('/assignment/overview')}>
                             Back to Assignment
                         </button>
-                        <button onClick={() => {
+                        <button disabled={props.final} onClick={() => {
                             props.setFirst("");
                             props.setSecond("");
                             props.setShowResult(false);
@@ -158,6 +162,7 @@ function AssignmentQuestion() {
                     </div>
                     }
                     { showResult && <ResultBox correct={first=="4" && second=="3"} 
+                        final={num === "2"}
                         setFirst={setFirst} 
                         setSecond={setSecond} 
                         setShowHint={setShowHint} 
